@@ -1,14 +1,17 @@
-import Navbar from './componets/Navbar'
-import ItemListContainer from './componets/itemListContainer'
+import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import Navbar from './componets/Navbar'; // Asegúrate de que la ruta sea correcta
+import ItemListContainer from './componets/itemListContainer';
 
 const App = () => {
   return (
-    <div>
-<Navbar />
-<ItemListContainer greeting= {"Bienvenidos a Samsung"} />
-
-    </div>
-  )
+    <ChakraProvider>
+      <Navbar />
+      <ItemListContainer greeting={"Bienvenidos a Samsung"} />
+      {/* El resto de tu aplicación */}
+    </ChakraProvider>
+  );
 }
 
-export default App
+export default App;
+

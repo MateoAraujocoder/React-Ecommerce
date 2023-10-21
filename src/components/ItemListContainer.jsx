@@ -24,6 +24,9 @@ const ItemListContainer = ({ greeting }) => {
                 <Button colorScheme="teal" variant="solid">
                   Buy Now
                 </Button>
+                <Button colorScheme="blue" variant="outline">
+                  Ver Detalles
+                </Button>
               </VStack>
             </Box>
           </Card>
@@ -34,4 +37,3 @@ const ItemListContainer = ({ greeting }) => {
 }
 
 export default ItemListContainer;
-

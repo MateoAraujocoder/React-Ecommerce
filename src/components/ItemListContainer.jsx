@@ -1,10 +1,12 @@
 import React from 'react';
 import { Box, Text, Button, VStack } from '@chakra-ui/react';
 import { Card } from "@chakra-ui/react"
+import { useNavigate } from 'react-router-dom';
 
 const ItemListContainer = ({ greeting }) => {
-  // Supongamos que tienes un array de productos
+  const navigate = useNavigate();
   const products = Array(10).fill().map((_, i) => ({
+    id: `producto${i+1}`,
     name: `Producto ${i+1}`,
     price: `$${(i+1)*10}`,
     stock: `${100-(i*10)} en stock`
@@ -14,8 +16,8 @@ const ItemListContainer = ({ greeting }) => {
     <Box>
       <Text fontSize="2xl" mb="4">{greeting}</Text>
       <VStack>
-        {products.map((product, i) => (
-          <Card key={i} maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+        {products.map((product) => (
+          <Card key={product.id} maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
             <Box p="6">
               <VStack>
                 <Text fontSize="xl">{product.name}</Text>
@@ -24,8 +26,8 @@ const ItemListContainer = ({ greeting }) => {
                 <Button colorScheme="teal" variant="solid">
                   Buy Now
                 </Button>
-                <Button colorScheme="blue" variant="outline">
-                  Ver Detalles
+                <Button colorScheme="blue" variant="outline" onClick={() => navigate(`/product/${product.id}`, { state: product })}>
+                  Ver detalles
                 </Button>
               </VStack>
             </Box>

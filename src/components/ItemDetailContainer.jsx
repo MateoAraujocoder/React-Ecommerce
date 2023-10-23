@@ -13,6 +13,7 @@ const ItemDetailContainer = () => {
             <p>Nombre del producto: {product.name}</p>
             <p>Precio del producto: {product.price}</p>
             <p>Stock del producto: {product.stock}</p>
+            <p>caracterizticas: {product.description}</p>
 
             <Flex
 

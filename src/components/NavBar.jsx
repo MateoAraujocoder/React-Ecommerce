@@ -32,7 +32,7 @@ const Navbar = () => {
         Samsung Ecommerce
       </Text>
 
-      <Box marginRight="10%">
+      <Box marginRight="15%">
         <Center maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
           <Button colorScheme="teal" variant="solid" onClick={() => navigate(`/`)}>
             Inicio
@@ -42,8 +42,8 @@ const Navbar = () => {
               Categorías
             </MenuButton>
             <MenuList>
-              <MenuItem _hover={{ bg: "teal.500", color: "white" }} onClick={() => handleCategoryClick('A')}>Notebooks</MenuItem>
-              <MenuItem _hover={{ bg: "teal.500", color: "white" }} onClick={() => handleCategoryClick('B')}>Relojes</MenuItem>
+              <MenuItem _hover={{ bg: "black", color: "white" }} onClick={() => handleCategoryClick('A')}>Notebooks</MenuItem>
+              <MenuItem _hover={{ bg: "black", color: "white" }} onClick={() => handleCategoryClick('B')}>Relojes</MenuItem>
  
             </MenuList>
           </Menu>
@@ -52,15 +52,6 @@ const Navbar = () => {
 
       <Flex alignItems="center">
         <CartWidget />
-        <Box
-          as={AiOutlineShoppingCart}
-          fontSize="2xl"
-          ml="2"
-          cursor="pointer"
-          _hover={{
-            color: 'teal.300',
-          }}
-        />
       </Flex>
     </Flex>
   );

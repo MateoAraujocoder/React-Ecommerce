@@ -1,10 +1,12 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Box, Text, Button, Flex } from '@chakra-ui/react';
+import { CartContext } from './CartContext';
 
 const ItemDetailContainer = () => {
     const location = useLocation();
     const product = location.state;
+    const {addToCart} = React.useContext(CartContext);
 
     return (
         <div>
@@ -17,7 +19,7 @@ const ItemDetailContainer = () => {
 
             <Flex
 
-            ><Button alignItems="center" colorScheme="teal" variant="solid">
+            ><Button alignItems="center" colorScheme="teal" variant="solid" onClick ={()=> addToCart (product)}>
                     Buy Now
                 </Button>
 

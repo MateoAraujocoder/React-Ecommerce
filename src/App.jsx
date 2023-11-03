@@ -6,10 +6,12 @@ import ItemCount from './components/itemCount';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer'; 
 import Category from './components/Category'; 
+import { CartProvider } from './components/CartContext';
 
 const App = () => {
   return (
     <ChakraProvider>
+      <CartProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -20,6 +22,7 @@ const App = () => {
         </Routes>
         <ItemCount></ItemCount>
       </Router>
+      </ CartProvider>
     </ChakraProvider>
   );
 }

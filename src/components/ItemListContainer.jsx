@@ -3,6 +3,7 @@ import { Box, Text, Button, VStack , Center} from '@chakra-ui/react';
 import { Card } from "@chakra-ui/react"
 import { useNavigate } from 'react-router-dom';
 import ItemCount from './itemCount';
+import { CartContext } from './CartContext';
 
 const ItemListContainer = ({ greeting }) => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const ItemListContainer = ({ greeting }) => {
     { id: 'samsung10', name: 'Samsung Galaxi A24', price: '$234.999', stock: '100 en stock', description:' 128 Gb Negro 6 Gb Ram' }
   ];
 
+  const {addToCart} = React.useContext(CartContext);
   
   return (
     <Box>
@@ -36,9 +38,9 @@ const ItemListContainer = ({ greeting }) => {
                 <Text>{product.price}</Text>
                 <Text>{product.stock}</Text>
 
-                <ItemCount /> {/* Agrega el contador a cada tarjeta */}
+                <ItemCount /> 
                 
-                <Button colorScheme="teal" variant="solid">
+                <Button colorScheme="teal" variant="solid" onClick={() => addToCart(product)}>
                   Buy Now
                 </Button>
                 <Button colorScheme="blue" variant="outline" onClick={() => navigate(`/product/${product.id}`, { state: product })}>

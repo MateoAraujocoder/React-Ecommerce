@@ -12,9 +12,9 @@ const ItemDetailContainer = () => {
         <div>
             <h1>Detalles del producto</h1>
 
-            <p>Nombre del producto: {product.name}</p>
-            <p>Precio del producto: {product.price}</p>
-            <p>Stock del producto: {product.stock}</p>
+            <p>Nombre del producto: {product.nombre}</p>
+            <p>Precio del producto: {product.precio}</p>
+            <p>Stock: {product.stock}</p>
             <p>caracterizticas: {product.description}</p>
 
             <Flex

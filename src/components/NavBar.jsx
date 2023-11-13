@@ -32,7 +32,7 @@ const Navbar = () => {
         Samsung Ecommerce
       </Text>
 
-      <Box marginRight="15%">
+      <Box marginRight="25%">
         <Center maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
           <Button colorScheme="teal" variant="solid" onClick={() => navigate(`/`)}>
             Inicio

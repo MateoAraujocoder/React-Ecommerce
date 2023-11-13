@@ -20,7 +20,7 @@ const CartWidget = () => {
       <MenuList>
         {cart.map((product) => (
           <MenuItem key={product.id}>
-            {product.name}: {product.price}
+            {product.nombre}: {product.precio}
           </MenuItem>
         ))}
       </MenuList>

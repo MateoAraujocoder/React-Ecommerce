@@ -6,6 +6,7 @@ import ItemCount from './itemCount';
 import { CartContext } from './CartContext';
 import { db } from '../main';
 import { collection, getDocs } from 'firebase/firestore';
+import { Image } from '@chakra-ui/react';
 
 const ItemListContainer = ({ greeting }) => {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ const ItemListContainer = ({ greeting }) => {
           <Card key={product.id} maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
             <Box p="6">
               <VStack>
+              <Image src={product.imgURL} alt={product.nombre} />
                 <Text fontSize="xl">{product.nombre}</Text>
                 <Text>{product.description}</Text>
                 <Text>{product.precio}</Text>

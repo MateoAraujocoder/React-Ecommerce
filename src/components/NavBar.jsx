@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Category from './Category';
 
-const Navbar = () => {
+const NavBar = () => {
   const navigate = useNavigate();
 
   const routes = useRoutes([
@@ -57,4 +57,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
